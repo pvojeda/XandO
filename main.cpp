@@ -18,7 +18,7 @@ int main()
                 {BLANK, BLANK, BLANK},
                 {BLANK, BLANK, BLANK}};
 
-        char turn = X; //Player X always goes first
+        char turn = X, Winner =' '; //Player X always goes first
         int row;
         int column;
         bool playing = true; //Continue playing by default
@@ -57,7 +57,7 @@ int main()
                 cout<<"\nBOARD\n-----\n";
                 cout<< board[0][0]<<" "<<board[0][1]<<" "<<board[0][2]<<" "<<endl;
                 cout<< board[1][0]<<" "<<board[1][1]<<" "<<board[1][2]<<" "<<endl;
-                cout<< board[2][0]<<" "<<board[2][1]<<" "<<board[2][2]<<" "<<end1;
+                cout<< board[2][0]<<" "<<board[2][1]<<" "<<board[2][2]<<" "<<endl;
                 if( ((board[0][0] == board [0][1] && board[0][1] == board[0][2]) ||
                     (board[0][0] == board [1][0] && board[1][0] == board[2][0]) ||
                     (board[0][0] == board[1][1] && board[1][1] == board[2][2])) &&
@@ -69,7 +69,7 @@ int main()
                   }
 
                 if ( ((board[0][2] == board[1][2] && board[1][2] == board[2][2]) ||
-                     (board[2][0] == board[2][1] && board[2][1] == board[2]p2])) && 
+                     (board[2][0] == board[2][1] && board[2][1] == board[2][2])) && 
                      board[2][2] != ' ')
                      {
                      Winner = board[2][2];
@@ -87,7 +87,7 @@ int main()
 
                     cout<<"Winner is"<<Winner<<endl;
                     }
-       }
+                    }
 
                 //TODO: Place the piece and swap turns
                 //Outline
@@ -107,7 +107,6 @@ int main()
                 //1-A-2. Display a space
                 //1-B. Display an newline to move to the next row of the board
            
-        }
         while( playing == true );
 
         cout<<"Goodbye!\n";
