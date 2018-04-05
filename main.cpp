@@ -85,7 +85,7 @@ int main()
                     Winner = board [1][1];
                     playing = false;
 
-                    cout<<"Winner is"<<Winner<<endl;
+                    cout<<"Winner is "<<Winner<<endl;
                     }
                     }
 
