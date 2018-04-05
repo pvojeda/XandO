@@ -52,6 +52,43 @@ int main()
                                 turn= 'X';
                         }
                 }
+                Winner = board[0][0];
+
+                cout<<"\nBOARD\n-----\n";
+                cout<< board[0][0]<<" "<<board[0][1]<<" "<<board[0][2]<<" "<<endl;
+                cout<< board[1][0]<<" "<<board[1][1]<<" "<<board[1][2]<<" "<<endl;
+                cout<< board[2][0]<<" "<<board[2][1]<<" "<<board[2][2]<<" "<<end1;
+                if( ((board[0][0] == board [0][1] && board[0][1] == board[0][2]) ||
+                    (board[0][0] == board [1][0] && board[1][0] == board[2][0]) ||
+                    (board[0][0] == board[1][1] && board[1][1] == board[2][2])) &&
+                    board[0][0] != ' ')
+                  {
+                  Winner = board[0][0];
+                  playing = false;
+                  cout<<"Winner is "<<Winner<<endl;
+                  }
+
+                if ( ((board[0][2] == board[1][2] && board[1][2] == board[2][2]) ||
+                     (board[2][0] == board[2][1] && board[2][1] == board[2]p2])) && 
+                     board[2][2] != ' ')
+                     {
+                     Winner = board[2][2];
+                     playing = false;
+                     cout<<"Winner is " <<Winner<<endl;
+                     }
+
+                if( ((board[0][1] == board[1][1] && board[1][1] == board [2][1]) ||
+                    (board[1][0] == board[1][1] && board[1][1] == board[1][2]) ||
+                    (board[0][2] == board[1][1] && board[1][1] == board[2][0])) &&
+                    board [1][1] != ' ')
+                    {
+                    Winner = board [1][1];
+                    playing = false;
+
+                    cout<<"Winner is"<<Winner<<endl;
+                    }
+       }
+
                 //TODO: Place the piece and swap turns
                 //Outline
                 //1. When neither of the (above) if nor else if statements are true, then...
@@ -61,7 +98,7 @@ int main()
                 //1-C.  In any other case, then...
                 //1-C-1.  turn should be assigned the value 'X'
 
-                cout<<"\nBOARD\n-----\n";
+
                 //TODO: Print the current board
                 //Outline
                 //1. Traverse through each row, calling the current row r
@@ -69,15 +106,9 @@ int main()
                 //1-A-1.  Display the value of the board at location of r and c
                 //1-A-2. Display a space
                 //1-B. Display an newline to move to the next row of the board
-                for ( int r=0; r<ROWS; r++)
-                {
-                        for( int c=0; c<COLUMNS; c++)
-                        {
-                                cout<<board[r][c]<<" ";
-                        }
-                        cout<<endl;
-                }
-        }while( playing );
+           
+        }
+        while( playing == true );
 
         cout<<"Goodbye!\n";
 
